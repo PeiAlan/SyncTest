@@ -18,14 +18,11 @@ import java.util.List;
  *
  *
  * 但是这可能是个错误
- * 关于这个例子  在后面会专门花时间再讲
  */
 @Slf4j(topic = "enjoy")
 public class Demo {
-
     boolean running = true;
     List<String> list = new ArrayList<>();
-
 
     /**
      * t1线程
@@ -41,15 +38,12 @@ public class Demo {
 
     public static void main(String[] args) {
         Demo demo = new Demo();
-
         new Thread(demo :: test,"t1").start();
-
         try {
             Thread.sleep(100);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
         demo.running = false;
     }
 

@@ -15,7 +15,6 @@ public class Demo {
 
     AtomicInteger count = new AtomicInteger(0);
 
-
     public void test(){
         for (int i = 0; i < 10000; i++) {
             if(count.get() < 1000){
@@ -26,15 +25,11 @@ public class Demo {
     }
     public static void main(String[] args) {
         Demo demo = new Demo();
-
         List<Thread> threads = new ArrayList();
-
         for (int i = 0; i < 10; i++) {
             threads.add(new Thread(demo::test, "thread-" + i));
         }
-
         threads.forEach((o)->o.start());
-
         threads.forEach((o)->{
             try {
                 o.join();
@@ -42,7 +37,6 @@ public class Demo {
                 e.printStackTrace();
             }
         });
-
         log.debug(demo.count+"");
     }
 
