@@ -13,12 +13,8 @@ public class CountDownLatchTest1 {
     public static void main(String[] args) throws InterruptedException {
          // ExecutorService executorService = Executors.newFixedThreadPool(3);
         // executorService
-
-
         //计数器=3
         CountDownLatch latch = new CountDownLatch(3);
-
-
 
         Thread thread = new Thread(() -> {
             log.debug("t1 thread start");
