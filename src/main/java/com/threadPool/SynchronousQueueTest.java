@@ -6,43 +6,15 @@ import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Author 钢牌讲师--子路
+ * @Author
+ * SynchronousQueue 可以说是没有容量的
+ *      t1线程put完数据后，其他线程必须消费完，才放第二个数据，否则一直阻塞
  **/
 
 @Slf4j(topic = "e")
 public class SynchronousQueueTest {
     static  boolean flag=true;
     public static void main(String[] args) throws InterruptedException {
-
-
-
-
-
-
-
-
-
-
-
-
-
-//        while(flag){
-//
-//
-//        }
-//
-//
-//        TimeUnit.SECONDS.sleep(1);
-//        new Thread(()->{
-//            flag=false;
-//        }).start();
-
-
-
-
-
-
-
 
         SynchronousQueue<String> synchronousQueue = new SynchronousQueue<>();
 

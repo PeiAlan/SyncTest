@@ -1,4 +1,4 @@
-package com.shadow.threadPool;
+package com.threadPool;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -6,7 +6,7 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @Author 钢牌讲师--子路
+ * @Author
  * 演示 空闲线程和核心线程的概念---空闲线程和核心线程都会从队列当中去获取任务 随机
  * 前提是空闲线程被弃用
  **/

@@ -16,9 +16,6 @@ public class Test6 {
     static  volatile  boolean flag =false;
 
 
-
-
-
     @SneakyThrows
     public static void main(String[] args) {
 

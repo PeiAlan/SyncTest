@@ -1,4 +1,4 @@
-package com.shadow.threadPool;
+package com.threadPool;
 
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +17,12 @@ public class TestThreadExecutorPool7 {
 
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         //最多2个thread  5个 task  其中2个task会在队列当中 1个task在put的时候会阻塞
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(2,2,1, TimeUnit.SECONDS,new ArrayBlockingQueue<>(2));
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(2,
+                2,
+                1,
+                TimeUnit.SECONDS,
+                new ArrayBlockingQueue<>(2)
+        );
 
         //t1
         threadPoolExecutor.execute(()->{
@@ -66,7 +71,8 @@ public class TestThreadExecutorPool7 {
 
     private static void shutdownNow() {
         //最多2个thread  5个 task  其中2个task会在队列当中 1个task在put的时候会阻塞
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(2,2,1, TimeUnit.SECONDS,new ArrayBlockingQueue<>(2));
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(2,
+                2,1, TimeUnit.SECONDS,new ArrayBlockingQueue<>(2));
 
         //t1
         threadPoolExecutor.execute(()->{

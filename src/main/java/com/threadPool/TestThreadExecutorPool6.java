@@ -1,4 +1,4 @@
-package com.shadow.threadPool;
+package com.threadPool;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -25,7 +25,6 @@ public class TestThreadExecutorPool6 {
                 }, () -> {
                     TimeUnit.MILLISECONDS.sleep(500);
                     log.debug("2");
-
                     return 2;
                 }, () -> {
                     TimeUnit.MILLISECONDS.sleep(2000);

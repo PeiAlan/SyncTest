@@ -1,4 +1,4 @@
-package com.shadow.threadPool;
+package com.threadPool;
 
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -14,8 +14,6 @@ public class TestThreadExecutorPool3 {
     static ThreadPoolExecutor threadPoolExecutor;
     @SneakyThrows
     public static void main(String[] args) {
-
-
 
         ExecutorService executorService = Executors.newFixedThreadPool(1);
 

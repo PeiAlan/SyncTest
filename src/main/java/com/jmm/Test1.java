@@ -26,15 +26,12 @@ import lombok.extern.slf4j.Slf4j;
 public class Test1 {
 
     public static int a = 0 , b = 0;
-
-
     public volatile static int x = 0 , y = 0;
 
     @SneakyThrows
     public static void main(String[] args) {
-        //计数 看第几次出现优化
+        //计数 看第几次出现优
         int count = 0;
-
 
         while (true) {
             count++;
