@@ -10,6 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * 主要是验证signal方法会转移node（线程）到主队列
  * 先进先出  231
+ * @author Ellison Pei
  */
 @Slf4j(topic = "enjoy")
 public class Lock1 {
@@ -36,8 +37,6 @@ public class Lock1 {
 
 
         //t1 最先得到锁 然后去wait队列当中阻塞  释放了锁
-
-
 
         //t4 启动 获取到锁 睡眠5s 没有释放锁 5s之后 把t1 唤醒
         Thread t4 = new Thread(() -> {

@@ -9,13 +9,13 @@ import java.util.concurrent.TimeUnit;
 public class Demo {
 
     synchronized void test(){
-        log.debug("demo test start........");
+        log.debug("demo testJol start........");
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        log.debug("demo test end........");
+        log.debug("demo testJol end........");
     }
 
     public static void main(String[] args) {
@@ -28,9 +28,9 @@ class Demo2 extends Demo {
 
     @Override
     synchronized void test(){
-        log.debug("demo2 test start........");
+        log.debug("demo2 testJol start........");
         super.test();
-        log.debug("demo2 test end........");
+        log.debug("demo2 testJol end........");
     }
 
 }

@@ -14,6 +14,7 @@ public class EnjoySync extends AbstractQueuedSynchronizer {
      * @param arg
      * @return
      */
+    @Override
     protected boolean tryAcquire(int arg) {
         if(getState()==0){
             boolean b = compareAndSetState(0, 1);

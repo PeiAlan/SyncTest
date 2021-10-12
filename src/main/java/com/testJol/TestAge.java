@@ -1,4 +1,4 @@
-package com.test;
+package com.testJol;
 
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;

@@ -15,7 +15,7 @@ public class Demo3 {
         new Thread(demo3::test,"t1").start();
 
         //这时  线程是安全的
-//        new Thread(demo3::test,"t2").start();
+//        new Thread(demo3::testJol,"t2").start();
 
         //此时又是线程不安全的，因为锁的对象变了
         Demo3 demo31 = new Demo3();

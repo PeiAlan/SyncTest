@@ -28,12 +28,12 @@ public class Demo {
      * t1线程
      */
     public void test(){
-        log.debug("test start...");
+        log.debug("testJol start...");
         boolean flag =running;
             while (running){
 
             }
-        log.debug("test end...");
+        log.debug("testJol end...");
     }
 
     public static void main(String[] args) {

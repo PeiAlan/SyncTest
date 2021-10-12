@@ -1,10 +1,17 @@
-package com.test;
+package com.testJol;
 
 import lombok.extern.slf4j.Slf4j;
 import org.openjdk.jol.info.ClassLayout;
 
 /**
- * <p>TODO</p>
+ *
+ *
+ * 问题： synchronized是偏向锁还是轻量锁还是重量锁？
+ * 答案：  有时候是，有时候不是。
+ *          如果同一个线程加锁，就是偏向锁；
+ *          如果是多线程交替执行，那就是轻量锁；
+ *          如果是多线程资源竞争，那就是重量锁，底层用 pthread_mutex实现；
+ *
  *
  * @author Ellison_Pei
  * @date 2021/10/12 14:44

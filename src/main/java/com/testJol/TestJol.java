@@ -1,4 +1,4 @@
-package com.test;
+package com.testJol;
 
 import lombok.extern.slf4j.Slf4j;
 import org.openjdk.jol.info.ClassLayout;
@@ -47,7 +47,7 @@ public class TestJol {
         log.debug(ClassLayout.parseInstance(l).toPrintable());
 
 
-        /**
+        /*
          * 问题： synchronized是偏向锁还是轻量锁还是重量锁？
          * 答案：  有时候是，有时候不是。
          *          如果同一个线程加锁，就是偏向锁；

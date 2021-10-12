@@ -50,7 +50,7 @@ public class TestThreadExecutorPool2 {
             //log.debug("线程名称：{} 正在执行task{}", Thread.currentThread().getName(), taskNum);
             try {
                 // core 抢走了队列当中的task  4sing  t2 idle 一直空闲--timeout --回收
-                Thread.currentThread().sleep(1000);//即使t2执行完了 也是两个
+                Thread.sleep(1000);//即使t2执行完了 也是两个
                // threadPoolExecutor.getCorePoolSize()
                 log.debug("线程数目{}", threadPoolExecutor.getPoolSize());
             } catch (InterruptedException e) {

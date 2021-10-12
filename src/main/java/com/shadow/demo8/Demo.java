@@ -41,7 +41,7 @@ public class Demo {
 
     public static void main(String[] args) {
         Demo demo11 = new Demo();
-       // Runnable r = () -> demo11.test();
+       // Runnable r = () -> demo11.testJol();
        // new Thread(r, "t1").start();
 
         new Thread(()->{
