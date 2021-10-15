@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 
 @Slf4j(topic = "enjoy")
-public class Test5 {
+public class Test5 implements Cloneable{
     static boolean isPrettyGril = false;
     static boolean isMoney = false;
     static  Object key = new Object();
@@ -26,7 +26,7 @@ public class Test5 {
      * @throws InterruptedException
      */
 
-    public static   void main(String[] args) throws InterruptedException {
+    public static  void main(String[] args) throws InterruptedException {
         //jack
         new Thread(() -> {
             synchronized (key) {
@@ -88,15 +88,26 @@ public class Test5 {
             synchronized (key) {
                 isMoney = true;
                 log.debug("给钱了");
-                //随机叫醒一个
-
+                //叫醒所有
                 key.notifyAll();
             }
         }, "boss").start();
-
     }
 
 
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 
-
+    /**
+     * 用于实例被垃圾回收器回收的时触发的操作。
+     * 当 GC (垃圾回收器) 确定不存在对该对象的有更多引用时，对象的垃圾回收器就会调用这个方法。
+     * @throws Throwable
+     */
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+        System.out.println("=======调用了 finalize() ");
+    }
 }
