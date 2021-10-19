@@ -1,2 +1,0 @@
-10:29:08.061 [main] ERROR com.example.testJol.TestJol - [,] - 没有 hashCode
-10:29:08.625 [main] ERROR com.example.testJol.TestJol - [,] - 调用了 hashCode
