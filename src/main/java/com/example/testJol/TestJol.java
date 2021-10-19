@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.openjdk.jol.info.ClassLayout;
 
 /**
- *  https://ellisonpei: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@github.com/PeiAlan/springDemo.git
+ *  https://idea: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@github.com/PeiAlan/springDemo.git
  *
  * @author Ellison_Pei
  * @date 2021/10/11 14:48
