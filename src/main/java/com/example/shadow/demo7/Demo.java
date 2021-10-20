@@ -1,12 +1,14 @@
 package com.example.shadow.demo7;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.concurrent.TimeUnit;
 
 //这里是重入锁的另外一种情况，继承
-@Slf4j(topic = "enjoy")
 public class Demo {
+    private static Logger log = LogManager.getLogger(Demo.class);
 
     synchronized void test(){
         log.debug("demo testJol start........");
@@ -23,8 +25,9 @@ public class Demo {
     }
 
 }
-@Slf4j(topic = "enjoy")
+
 class Demo2 extends Demo {
+    private static Logger log = LogManager.getLogger(Demo2.class);
 
     @Override
     synchronized void test(){

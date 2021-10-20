@@ -1,10 +1,14 @@
 package com.example.shadow.demo4;
 
-import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-//同步方法和非同步方法是否可以同时调用？ 可以
-@Slf4j(topic = "enjoy")
+/**
+ * 同步方法和非同步方法是否可以同时调用？ 可以
+ *
+ * */
 public class Demo{
+    private static Logger log = LogManager.getLogger(Demo.class);
     public synchronized void test1(){
         log.debug(Thread.currentThread().getName() + " test1 start...");
         try {

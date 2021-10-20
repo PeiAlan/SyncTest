@@ -1,12 +1,14 @@
 package com.example.shadow.demo6;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.concurrent.TimeUnit;
 
 //一个同步方法调用另外一个同步方法，能否得到锁?
 //重入  synchronized默认支持重入
-@Slf4j(topic = "enjoy")
 public class Demo {
+    private static Logger log = LogManager.getLogger(Demo.class);
 
     synchronized void test1(){
         log.debug("test1 start.........");

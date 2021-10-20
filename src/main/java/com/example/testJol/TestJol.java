@@ -45,7 +45,7 @@ public class TestJol {
 
         log.error("调用了 hashCode");
         // 无锁 可偏向 已经偏向
-        log.info(Integer.toHexString(l.hashCode()));
+//        log.info(Integer.toHexString(l.hashCode()));
         log.debug(ClassLayout.parseInstance(l).toPrintable());
 
 

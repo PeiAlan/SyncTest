@@ -1,6 +1,8 @@
 package com.example.shadow.demo10;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,41 +14,32 @@ import java.util.List;
  * volatile并不能保证多个线程共同修改running变量时所带来的不一致问题，
  * 也就是说volatile不能替代synchronized或者说volatile保证不了原子性
  */
-@Slf4j(topic = "enjoy")
 public class Demo {
-
+    private static Logger log = LogManager.getLogger(Demo.class);
     volatile int count = 0;
-
-    public void test(){
+    public void test() {
         for (int i = 0; i < 10000; i++) {
-            count ++;
+            count++;
         }
     }
 
-
     public static void main(String[] args) {
         Demo demo = new Demo();
-
         List<Thread> threads = new ArrayList();
-
         //new 10個线程
         for (int i = 0; i < 10; i++) {
             threads.add(new Thread(demo::test, "t-" + i));
         }
-
         //遍历这个10个线程  依次启动
-        threads.forEach((o)->o.start());
-
+        threads.forEach((o) -> o.start());
         //等待10个线程执行完
-        threads.forEach((o)->{
+        threads.forEach((o) -> {
             try {
                 o.join();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
-
-        log.debug(demo.count+"");
+        log.debug(demo.count + "");
     }
-
 }

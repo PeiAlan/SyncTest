@@ -1,6 +1,7 @@
 package com.example.shadow.demo8;
 
-import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.concurrent.TimeUnit;
 
@@ -8,8 +9,8 @@ import java.util.concurrent.TimeUnit;
  * synchronized 和异常的关系
  * T2线程能否执行？
  */
-@Slf4j(topic = "enjoy")
 public class Demo {
+    private static Logger log = LogManager.getLogger(Demo.class);
     Object o = new Object();
 
     int count = 0;

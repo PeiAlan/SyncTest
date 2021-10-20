@@ -1,6 +1,8 @@
 package com.example.shadow.demo5;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.concurrent.TimeUnit;
 
@@ -9,8 +11,8 @@ import java.util.concurrent.TimeUnit;
  * 实际业务当中应该看是否允许脏读，
  * 不允许的情况下对读方法也要加锁
  */
-@Slf4j(topic = "enjoy")
 public class Demo {
+    private static Logger log = LogManager.getLogger(Demo.class);
 
     //卡的持有人
     String name;
@@ -40,18 +42,15 @@ public class Demo {
 
     public static void main(String[] args) {
         Demo demo = new Demo();
-
         //2s
         new Thread(()->demo.set("zl",100.0)).start();
-
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         //1s之后 结果 0
-        log.debug(demo.getBalance("zl")+"");//
-
+        log.debug(demo.getBalance("zl")+"");
         try {
             TimeUnit.SECONDS.sleep(2);
         } catch (InterruptedException e) {
