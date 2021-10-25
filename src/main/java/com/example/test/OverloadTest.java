@@ -1,17 +1,16 @@
 package com.example.test;
 
-import com.example.guarded.Test;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * <p>TODO</p>
+ * 重载实现
  *
  * @author Ellison_Pei
  * @date 2021/10/22 09:19
  * @since 1.0
  **/
 @Slf4j
-public class Test1 {
+public class OverloadTest {
     private Integer add(int a, int b) {
         return a + b;
     }
@@ -25,9 +24,9 @@ public class Test1 {
     }
 
     public static void main(String[] args) {
-        Test1 test1 = new Test1();
-        log.debug("1 + 2 = {}", test1.add(1, 2));
-        log.debug("\"{}\" 拼接 \"{}\" = {}", "忍者", "必须死", test1.add("忍者", "必须死"));
-        log.debug("true & false = {}", test1.add(true, false));
+        OverloadTest test = new OverloadTest();
+        log.debug("1 + 2 = {}", test.add(1, 2));
+        log.debug("\"{}\" 拼接 \"{}\" = {}", "忍者", "必须死", test.add("忍者", "必须死"));
+        log.debug("true & false = {}", test.add(true, false));
     }
 }

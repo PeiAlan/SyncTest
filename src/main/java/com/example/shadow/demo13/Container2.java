@@ -1,6 +1,8 @@
 package com.example.shadow.demo13;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,11 +15,11 @@ import java.util.concurrent.TimeUnit;
  *
  * 有两个问题，第一由于没有加同步，可能size等于5的时候，有另外一个线程加了一下才break，不是很精确
  * 第二个问题就是浪费cpu，T2线程用的是死循环
+ * @author Ellison Pei
  */
-
-@Slf4j(topic = "enjoy")
 public class Container2 {
 
+    private static Logger log = LogManager.getLogger(Container2.class);
     volatile List lists = new ArrayList();
 
     public void add(Object o){

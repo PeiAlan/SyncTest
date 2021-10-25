@@ -3,6 +3,7 @@ package com.example.aqs;
 import java.util.concurrent.locks.AbstractQueuedLongSynchronizer;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.LockSupport;
 
 /**
  * 同步器  工具---为锁服务
@@ -35,7 +36,6 @@ public class EnjoySync extends AbstractQueuedSynchronizer {
     protected boolean tryRelease(int arg) {
         setExclusiveOwnerThread(null);
         setState(0);
-
         return true;
     }
 

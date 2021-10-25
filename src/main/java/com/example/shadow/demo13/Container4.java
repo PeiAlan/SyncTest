@@ -1,6 +1,8 @@
 package com.example.shadow.demo13;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +15,9 @@ import java.util.concurrent.TimeUnit;
  *
  * 相比较上一个例子，这里T1里面用wait释放锁，T2能够及时结束
  */
-@Slf4j(topic = "enjoy")
 public class Container4 {
 
+    private static Logger log = LogManager.getLogger(Container4.class);
     volatile List lists = new ArrayList();
 
     public void add(Object o){

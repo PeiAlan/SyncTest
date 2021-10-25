@@ -4,10 +4,10 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.locks.ReentrantLock;
 
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class LockTest3 {
 
-    //首先定义一把锁
+    /** 首先定义一把锁 */
     static ReentrantLock lock = new ReentrantLock();
 
     public static void main(String[] args) {
@@ -25,8 +25,6 @@ public class LockTest3 {
             lock.unlock();
         }
     }
-
-
 
     public static void lock2() {
         lock.lock();

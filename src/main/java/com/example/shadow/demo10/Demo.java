@@ -1,6 +1,5 @@
 package com.example.shadow.demo10;
 
-import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,6 +12,7 @@ import java.util.List;
  * 虽然说加了2但是实际上只加了1.
  * volatile并不能保证多个线程共同修改running变量时所带来的不一致问题，
  * 也就是说volatile不能替代synchronized或者说volatile保证不了原子性
+ * @author
  */
 public class Demo {
     private static Logger log = LogManager.getLogger(Demo.class);

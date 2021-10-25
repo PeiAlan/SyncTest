@@ -22,7 +22,6 @@ public class LockTest9 {
             }
         },"t1").start();
 
-
         new Thread(() -> {
             try {
                 waitNofity.print(k+"",2,3);
@@ -31,9 +30,6 @@ public class LockTest9 {
             }
         },"t2").start();
 
-
-
-
         new Thread(() -> {
             try {
                 waitNofity.print(k+"",3,1);
@@ -41,17 +37,12 @@ public class LockTest9 {
                 e.printStackTrace();
             }
         },"t3").start();
-
-
-
     }
         //et t2  t3
         //
 
     static class waitNofity{
-
         int flag=1;
-
         public void print(String content,int waitFlag,int nextFlag) throws InterruptedException {
             for (int i = 0; i <4 ; i++) {
                 synchronized (this){

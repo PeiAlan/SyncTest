@@ -11,7 +11,7 @@ public class EnjoyLock implements Lock {
 
     EnjoySync enjoySync = new EnjoySync();
     /**
-     * 加锁---阻塞
+     * 加锁---阻塞式加锁
      */
     @Override
     public void lock() {
@@ -47,15 +47,12 @@ public class EnjoyLock implements Lock {
     public static void main(String[] args) throws InterruptedException {
         EnjoyLock enjoyLock = new EnjoyLock();
 
-
         new Thread(()->{
             enjoyLock.lock();
             log.debug("-----------");
             enjoyLock.unlock();
 
         },"t1").start();
-
-
 
         enjoyLock.lock();
         log.debug("main");

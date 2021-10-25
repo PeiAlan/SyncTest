@@ -1,6 +1,8 @@
 package com.example.shadow.demo13;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +14,11 @@ import java.util.concurrent.TimeUnit;
  * 当个数到5个时，线程2给出提示并结束线程2
  *
  * 这里list在两个线程之间不保证可见性，所以线程2始终结束不了
+ *
  */
-@Slf4j(topic = "enjoy")
 public class Container1 {
+
+    private static Logger log = LogManager.getLogger(Container1.class);
 
     List lists = new ArrayList();
 
@@ -33,7 +37,6 @@ public class Container1 {
             for (int i = 0; i < 10; i++) {
                 c.add(new Object());
                 log.debug("add " + i);
-
                 try {
                     TimeUnit.SECONDS.sleep(1);
                 } catch (Exception e) {

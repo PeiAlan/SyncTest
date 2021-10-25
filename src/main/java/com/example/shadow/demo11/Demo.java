@@ -1,14 +1,18 @@
 package com.example.shadow.demo11;
 
-import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Slf4j(topic = "enjoy")
+/**
+ * @author Ellison Pei
+ */
 public class Demo {
+    private static Logger log = LogManager.getLogger(Demo.class);
     int count = 0;
-    //相比较上一个例子，synchronized既保证了原子性又保证了可见性
+    /** 相比较上一个例子，synchronized既保证了原子性又保证了可见性 */
     public synchronized void test(){
         for (int i = 0; i < 10000; i++) {
             count ++;
