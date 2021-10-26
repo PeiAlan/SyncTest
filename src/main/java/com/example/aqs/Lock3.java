@@ -8,7 +8,6 @@ import java.util.concurrent.locks.ReentrantLock;
 @Slf4j(topic = "enjoy")
 public class Lock3 {
 
-
     public static void main(String[] args) throws InterruptedException {
         ReentrantLock lock = new ReentrantLock();
         Thread t1 = new Thread(() -> {
