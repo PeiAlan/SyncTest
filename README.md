@@ -190,4 +190,4 @@ synchronized 中也有条件变量，就是以前讲的waitSet 不满足条件�
 
 # ReentrantLock的使用及原理
 
-见博客：
+见博客：[2020-09-20-ReentrantLock的使用及原理](https://ellisonpei.gitee.io/2020/09/20/2020-09-20-reentrantlock-de-shi-yong-ji-yuan-li/)
