@@ -1,7 +1,6 @@
-package com.example;
+package com.example.waston;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -12,9 +11,8 @@ import java.util.List;
  * @description: TODO
  * @date 2019/11/19 15:05
  */
+@Slf4j
 public class WatsonsFileUtil {
-
-    private static final Log logger = LogFactory.getLog(WatsonsFileUtil.class);
 
     /**
      * 读取文件内容到list
@@ -38,16 +36,16 @@ public class WatsonsFileUtil {
                 list.add(temp1);
             }
             bReader_conf.close();
-            logger.info("写入fileutil list：" + list.size());
+            log.info("写入fileutil list：" + list.size());
         } catch (Exception e) {
-            logger.error(e.getMessage(), e);
+            log.error(e.getMessage(), e);
             throw new RuntimeException(e.getMessage());
         } finally {
             if (bReader_conf != null) {
                 try {
                     bReader_conf.close();
                 } catch (IOException e) {
-                    logger.error(e.getMessage(), e);
+                    log.error(e.getMessage(), e);
                 }
             }
         }

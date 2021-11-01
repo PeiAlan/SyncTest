@@ -2,6 +2,9 @@ package com.example.lock;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -14,7 +17,11 @@ public class LockTest3 {
     static ReentrantLock lock = new ReentrantLock();
 
     public static void main(String[] args) {
-        lock1();
+//        lock1();
+
+        String s = "PL1641-20211028100116_PL.csv";
+
+        System.out.println(s.substring(3, s.indexOf("-")));
     }
 
 
