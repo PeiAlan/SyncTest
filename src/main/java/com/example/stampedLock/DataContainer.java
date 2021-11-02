@@ -12,10 +12,10 @@ import java.util.concurrent.locks.StampedLock;
  * 不支持重入
  * 不支持条件
  */
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class DataContainer {
     int i;
-    long stampw=0l;
+    long stampw = 0L;
 
     public void setI(int i) {
         this.i = i;
@@ -33,7 +33,8 @@ public class DataContainer {
         //1s之后验戳
         //TimeUnit.SECONDS.sleep(1);
         //验戳
-        if (lock.validate(stamp)) {//线程安全问题
+        if (lock.validate(stamp)) {
+            // 临界区代码存在线程安全问题
             log.debug("StampedLock 验证完毕stamp{}, data.i:{}", stamp, i);
             TimeUnit.SECONDS.sleep(10);
             return i;
@@ -54,7 +55,6 @@ public class DataContainer {
     }
 
 
-
     @SneakyThrows
     public void write(int i) {
         //cas 加鎖
@@ -64,7 +64,7 @@ public class DataContainer {
             TimeUnit.SECONDS.sleep(5);
             this.i = i;
         } finally {
-            log.debug("写锁解锁 {},data.i{}", stampw,i);
+            log.debug("写锁解锁 {},data.i{}", stampw, i);
             lock.unlockWrite(stampw);
         }
     }

@@ -1,7 +1,10 @@
 package com.example.stampedLock;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.concurrent.TimeUnit;
 
+@Slf4j
 public class StampedLockTest {
 
     public static void main(String[] args) throws InterruptedException {
@@ -15,7 +18,6 @@ public class StampedLockTest {
             dataContainer.read();
         }, "t1").start();
 
-
 //        new Thread(() -> {
 //            dataContainer.read();
 //        }, "t2").start();
@@ -24,5 +26,6 @@ public class StampedLockTest {
         new Thread(() -> {
             dataContainer.write(9);
         }, "t2").start();
+
     }
 }

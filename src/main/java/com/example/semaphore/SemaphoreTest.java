@@ -6,13 +6,13 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * 来限制对资源访问的线程上线
+ * 来限制对资源访问的线程的上限
  */
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class SemaphoreTest {
     public static void main(String[] args) {
 
-        //每次访问的线程上限是3
+        //每次访问的线程上限是3，即每次同时进行的线程最大是3个
         Semaphore semaphore = new Semaphore(3);
 
         for (int i = 0; i < 15; i++) {

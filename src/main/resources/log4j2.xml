@@ -118,9 +118,7 @@
         <!-- 常打印的应用日志，建议独立配置，并采用异步模式。name根据实际的包名修改，生产环境中additivity建议设置为false以避免在root logger中重复打印 -->
         <AsyncLogger name="com.example" level="DEBUG" includeLocation="false" additivity="false">
             <AppenderRef ref="Console" />
-            <AppenderRef ref="file_info" />
             <AppenderRef ref="file_debug" />
-            <AppenderRef ref="file_error" />
         </AsyncLogger>
     </Loggers>
 </Configuration>
