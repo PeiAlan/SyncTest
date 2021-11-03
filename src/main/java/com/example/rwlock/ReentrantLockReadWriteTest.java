@@ -19,7 +19,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * @Author Ellison Pei
  * @Date 2020/9/16 11:26
  **/
-@Slf4j(topic = "ellison")
+@Slf4j
 public class ReentrantLockReadWriteTest {
     private static ReentrantReadWriteLock reentrantLock = new ReentrantReadWriteLock();
     private static ReentrantReadWriteLock.ReadLock readLock = reentrantLock.readLock();

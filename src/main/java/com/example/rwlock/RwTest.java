@@ -11,7 +11,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * @Author Ellison Pei
  * @Date 2020/9/19 15:48
  **/
-@Slf4j(topic = "ellison")
+@Slf4j
 public class RwTest {
 
     //读写锁

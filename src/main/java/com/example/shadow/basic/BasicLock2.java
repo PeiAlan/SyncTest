@@ -2,7 +2,7 @@ package com.example.shadow.basic;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class BasicLock2 {
 
     /**

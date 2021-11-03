@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
  * 锁定的对象有两种:1.类的实例 2.类对象(类锁)
  * 加synchronized关键字之后不一定能实现线程安全，具体还要看锁定的对象是否唯一。
  */
-@Slf4j(topic = "ellison")
+@Slf4j
 public class Demo1 {
     private int count = 10;
     private Object object = new Object();

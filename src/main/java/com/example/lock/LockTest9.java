@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.locks.LockSupport;
 
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class LockTest9 {
 
    static int k=0;

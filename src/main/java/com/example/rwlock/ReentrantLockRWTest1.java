@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
  * @Author Ellison Pei
  * @Date 2020/9/16 11:37
  **/
-@Slf4j(topic = "ellison")
+@Slf4j
 public class ReentrantLockRWTest1 {
     private static java.util.concurrent.locks.ReentrantReadWriteLock reentrantLock = new java.util.concurrent.locks.ReentrantReadWriteLock();
     private static java.util.concurrent.locks.ReentrantReadWriteLock.ReadLock readLock = reentrantLock.readLock();

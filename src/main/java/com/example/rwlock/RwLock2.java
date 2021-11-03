@@ -23,7 +23,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * @Author Ellison Pei
  * @Date 2020/9/19 16:23
  **/
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class RwLock2 {
     //读写锁
     static ReentrantReadWriteLock rwl = new ReentrantReadWriteLock();

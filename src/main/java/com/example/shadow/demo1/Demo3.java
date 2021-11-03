@@ -2,7 +2,7 @@ package com.example.shadow.demo1;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class Demo3 {
     private int count = 10;
     //直接加在方法声明上，相当于是synchronized(this)

@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
  * @author Ellison Pei
  * @date 2020/9/10 23:20
  **/
-@Slf4j(topic = "ellison")
+@Slf4j
 public class AAA implements AutoCloseable {
     protected Object lock;
 

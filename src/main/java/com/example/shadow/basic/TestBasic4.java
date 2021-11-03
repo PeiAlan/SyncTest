@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
  * x线程锁的是 当前 BasicLock1 类
  * y线程锁的是  实例对象 new BasicLock1()
  */
-@Slf4j(topic = "ellison")
+@Slf4j
 public class TestBasic4 {
     /**
      * t1、t2启动时 ，线程打印是存在竞争关系的

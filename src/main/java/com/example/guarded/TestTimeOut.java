@@ -2,7 +2,7 @@ package com.example.guarded;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class TestTimeOut {
     public static void main(String[] args) {
         GuardedObjectTimeOut guardedObject = new GuardedObjectTimeOut();

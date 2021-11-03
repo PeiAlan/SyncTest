@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class LockTest5 {
 
     public static void main(String[] args) throws InterruptedException {

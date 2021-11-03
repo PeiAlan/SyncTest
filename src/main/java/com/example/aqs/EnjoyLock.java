@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class EnjoyLock implements Lock {
 
     EnjoySync enjoySync = new EnjoySync();

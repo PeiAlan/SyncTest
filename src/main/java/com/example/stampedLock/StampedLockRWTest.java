@@ -12,7 +12,7 @@ import java.util.concurrent.locks.StampedLock;
  * @Author Ellison Pei
  * @Date 2020/9/24 14:11
  **/
-@Slf4j(topic = "ellison")
+@Slf4j
 public class StampedLockRWTest {
     public static void main(String[] args) {
         Container container = new Container();
@@ -35,7 +35,7 @@ public class StampedLockRWTest {
     }
 }
 
-@Slf4j(topic = "ellison")
+@Slf4j
 class Container {
     int i;
     //提供 戳  的功能，read之前获取戳，判断戳是否被改变

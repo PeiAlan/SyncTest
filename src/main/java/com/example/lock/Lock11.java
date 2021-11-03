@@ -10,7 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @Author Ellison Pei
  * @Date 2020/9/15 21:06
  **/
-@Slf4j(topic = "ellison")
+@Slf4j
 public class Lock11 {
     public static void main(String[] args) {
         ReentrantLock lock = new ReentrantLock();

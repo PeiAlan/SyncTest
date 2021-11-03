@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
  * 业务逻辑中只有count++这句需要sync，这时不应该给整个方法上锁
  * 采用细粒度的锁，可以使线程争用时间变短，从而提高效率
  */
-@Slf4j(topic = "ellison")
+@Slf4j
 public class Demo3 {
     int count = 0;
     public synchronized void test1(){

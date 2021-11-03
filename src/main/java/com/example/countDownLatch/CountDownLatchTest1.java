@@ -7,7 +7,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class CountDownLatchTest1 {
 
     public static void main(String[] args) throws InterruptedException {

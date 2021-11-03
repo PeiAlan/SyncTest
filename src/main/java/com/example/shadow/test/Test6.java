@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
  *  什么是对象？内存级别而言来研究什么是对象
  */
 
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class Test6 {
     static boolean isPrettyGril = false;
     static boolean isMoney = false;

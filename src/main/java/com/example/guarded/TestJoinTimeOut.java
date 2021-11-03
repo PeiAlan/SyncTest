@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author Ellison Pei
  */
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class TestJoinTimeOut {
 
     public static void main(String[] args) throws InterruptedException {

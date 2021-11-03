@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
  * 锁的是不同的对象
  *
  */
-@Slf4j(topic = "ellison")
+@Slf4j
 public class TestBasic3 {
     /**
      * 执行结果永远是y在前

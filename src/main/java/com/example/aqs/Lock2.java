@@ -8,7 +8,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class Lock2 {
     //读写锁
     static ReentrantReadWriteLock rwl = new ReentrantReadWriteLock();

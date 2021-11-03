@@ -3,7 +3,7 @@ package com.example.lock;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class LockTest7 {
     static final Object lock = new Object();
     // 表示 t2 是否运行过

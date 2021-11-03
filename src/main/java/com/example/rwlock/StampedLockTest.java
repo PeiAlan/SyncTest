@@ -13,7 +13,7 @@ import java.util.concurrent.locks.StampedLock;
  * @Author Ellison Pei
  * @Date 2020/9/19 17:34
  **/
-@Slf4j(topic = "ellison")
+@Slf4j
 public class StampedLockTest {
     static StampedLock stampedLock = new StampedLock();
     static Lock readLock = stampedLock.asReadLock();

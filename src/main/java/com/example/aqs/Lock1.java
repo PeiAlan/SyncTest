@@ -13,7 +13,7 @@ import java.util.concurrent.locks.ReentrantLock;
  *
  * @author Ellison Pei
  */
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class Lock1 {
     public static void main(String[] args) throws InterruptedException {
         ReentrantLock lock = new ReentrantLock();

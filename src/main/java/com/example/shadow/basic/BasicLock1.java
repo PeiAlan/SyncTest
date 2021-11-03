@@ -2,7 +2,7 @@ package com.example.shadow.basic;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j(topic = "ellison")
+@Slf4j
 public class BasicLock1 {
     /**
      * 修饰static方法，锁的是当前的类对象

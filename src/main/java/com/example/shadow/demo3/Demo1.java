@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
  * 这时候虽然第一个线程只减了一个1但是却打印出来一个7(这里情况是不一定的)
  * 可以给方法加上synchronized
  */
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class Demo1 implements Runnable{
 
     private int count = 10;

@@ -2,7 +2,7 @@ package com.example.shadow.demo1;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j(topic = "ellison")
+@Slf4j
 public class Demo4 {
     private static int count = 10;
     //synchronize关键字修饰静态方法锁定的是类的对象

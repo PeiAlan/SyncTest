@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
  * 但是如果o变成另外一个对象，则锁定的对象发生改变
  * 应该避免将锁定对象的引用变成另外一个对象
  */
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class Demo1 {
     Object o = new Object();
 

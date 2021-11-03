@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class CyclicBarrierTest2 {
     public static void main(String[] args) {
         Object o = new Object();

@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Logger;
 
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class LockTest8 {
 
 

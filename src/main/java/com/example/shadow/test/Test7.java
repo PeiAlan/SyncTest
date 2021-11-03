@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.TimeUnit;
 
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class Test7 {
 
     int i=0;

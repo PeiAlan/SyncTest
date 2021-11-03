@@ -2,7 +2,7 @@ package com.example.shadow.demo3;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j(topic = "enjoy")
+@Slf4j
 public class Demo2 implements Runnable{
 
     private int count = 10;
