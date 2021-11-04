@@ -8,21 +8,22 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * @author Ellison Pei
+ */
 @Slf4j
 public class CyclicBarrierTest2 {
     public static void main(String[] args) {
         Object o = new Object();
-        AtomicInteger i= new AtomicInteger();
-        CyclicBarrier cyclicBarrier = new CyclicBarrier(2,()->{
+        AtomicInteger i = new AtomicInteger();
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(2, () -> {
             log.debug("xxxxxxx");
         });
-        ExecutorService service = Executors.newFixedThreadPool(2,(r)->{
-            return new Thread(r,"t"+ i.getAndIncrement());
-        });
+        ExecutorService service = Executors.newFixedThreadPool(2, (r) -> new Thread(r, "t" + i.getAndIncrement()));
 
 
-        for (int j = 0; j <2 ; j++) {
-            service.submit(()->{
+        for (int j = 0; j < 2; j++) {
+            service.submit(() -> {
                 log.debug("start");
                 try {
                     TimeUnit.SECONDS.sleep(1);
@@ -36,7 +37,7 @@ public class CyclicBarrierTest2 {
             });
 
 
-            service.submit(()->{
+            service.submit(() -> {
                 log.debug("start");
                 try {
                     TimeUnit.SECONDS.sleep(3);

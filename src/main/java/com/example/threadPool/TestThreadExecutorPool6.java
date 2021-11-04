@@ -9,7 +9,7 @@ import java.util.concurrent.*;
 /**
  * @Author 钢牌讲师--子路
  **/
-@Slf4j(topic = "e")
+@Slf4j
 public class TestThreadExecutorPool6 {
     static ThreadPoolExecutor threadPoolExecutor;
 
@@ -17,7 +17,7 @@ public class TestThreadExecutorPool6 {
 
         ExecutorService executorService = Executors.newFixedThreadPool(4);
 
-        int i  = executorService.invokeAny(Arrays.asList(
+        int i = executorService.invokeAny(Arrays.asList(
                 () -> {
                     TimeUnit.MILLISECONDS.sleep(3000);
                     log.debug("1");
@@ -37,7 +37,7 @@ public class TestThreadExecutorPool6 {
                 }
         ));
         log.debug("main start");
-        log.debug(i+"");
+        log.debug(i + "");
 //        future.forEach(f->{
 //            try {
 //                log.debug(f.get());
@@ -48,6 +48,10 @@ public class TestThreadExecutorPool6 {
 //            }
 //        });
         log.debug("main end");
+        //        关闭任务
+        executorService.shutdown();
+//        关闭执行器
+        executorService.awaitTermination(1, TimeUnit.MINUTES);
 
     }
 
