@@ -28,12 +28,12 @@ public class TestThreadExecutorPool11 {
              * 2、核心线程是不会销毁的
              *  50
              * 线程池是如何保证核心线程不会被销毁的---->空闲线程数为什么会销毁
+             *
+             *
              */
             threadPoolExecutor.execute(() -> {
                 log.debug("worker thread size[{}]", threadPoolExecutor.getPoolSize());
             });
-
-
         }
 
 
@@ -43,7 +43,6 @@ public class TestThreadExecutorPool11 {
         threadPoolExecutor = new ThreadPoolExecutor(1,2,
                 3, TimeUnit.SECONDS,
                 new ArrayBlockingQueue<>(5));
-
 
         for (int i = 0; i <6 ; i++) {
             //这里永远只有一个线程在工作？

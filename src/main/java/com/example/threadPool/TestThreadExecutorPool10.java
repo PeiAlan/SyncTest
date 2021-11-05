@@ -13,14 +13,13 @@ import java.util.concurrent.TimeUnit;
  * @Author 钢牌讲师--子路
  * 每周的周三 22点0分0秒去执行一个任务 同步redis mysql 只有一个线程
  **/
-@Slf4j(topic = "e")
+@Slf4j
 public class TestThreadExecutorPool10 {
-
 
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         //一个线程
         ScheduledThreadPoolExecutor scheduled
-                = new ScheduledThreadPoolExecutor(1);
+                = new ScheduledThreadPoolExecutor(1, CustomThreadFactory.create("scheduled-service"));
 
         /**
          * 1、当前在编码的时候距离周三还有多久------initialDelay

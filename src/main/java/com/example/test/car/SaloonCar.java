@@ -1,12 +1,12 @@
-package com.example.test;
+package com.example.test.car;
 
 /**
- * 摩托车  MotorBike
- *
- * @date 2021/11/1 15:32
+ * 轿车
+ * @date 2021/11/1 15:29
  * @since 1.0
  **/
-public class MotorBike implements Car {
+public class SaloonCar implements Car{
+
     @Override
     public void brake() {
         System.out.println("");

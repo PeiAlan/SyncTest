@@ -9,15 +9,13 @@ import java.util.concurrent.*;
  * @Author 钢牌讲师--子路
  * 定时任务
  **/
-@Slf4j(topic = "e")
+@Slf4j
 public class TestThreadExecutorPool9 {
 
    static ScheduledExecutorService scheduledExecutorService;
     public static void main(String[] args) throws InterruptedException, ExecutionException {
-        withFixedDelay();
-
+        atFixedRate();
     }
-
 
     //delay  正在的延迟执行
     private static void withFixedDelay() {

@@ -1,4 +1,4 @@
-package com.example.test;
+package com.example.test.car;
 
 /**
  * 卡车  TruckCar
