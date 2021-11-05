@@ -23,7 +23,6 @@ public class TestThreadExecutorPool7 {
                 TimeUnit.SECONDS,
                 new ArrayBlockingQueue<>(2)
         );
-
         //t1
         threadPoolExecutor.execute(()->{
             log.debug("task1--start----");
