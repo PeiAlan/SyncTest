@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.concurrent.TimeUnit;
 
 /**
- * synchronized 和异常的关系
+ * syncTest 和异常的关系
  * T2线程能否执行？
  */
 public class Demo {

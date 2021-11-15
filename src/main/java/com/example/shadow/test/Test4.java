@@ -76,7 +76,7 @@ public class Test4 {
 
 //        for (int i = 0; i < 10; i++) {
 //            new Thread(() -> {
-//                    synchronized (key) {
+//                    syncTest (key) {
 //                        log.debug("我们10个屌丝工作了");
 //                    }
 //                }, "其它人").start();
