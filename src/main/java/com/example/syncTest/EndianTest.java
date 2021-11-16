@@ -6,7 +6,7 @@ import com.example.utils.UnsafeUtil;
 import sun.misc.Unsafe;
 
 /**
- * @author Fox
+ * @author Ellison Pei
  * 判断当前环境字节是大端还是小端字节序存储
  * Little-Endian 高位字节在前，低位字节在后。
  * Big-Endian 低位字节在前，高位字节在后。

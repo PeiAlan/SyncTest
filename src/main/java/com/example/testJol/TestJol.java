@@ -35,6 +35,10 @@ public class TestJol {
      * 010-->重量锁
      * 011-->GC标记
      *
+     * 批量重偏向阈值
+     *    intx BiasedLockingBulkRebiasThreshold          = 20
+     *      intx BiasedLockingBulkRevokeThreshold          = 40
+     *
      *
      * @param args
      */
@@ -43,7 +47,7 @@ public class TestJol {
         // 无锁 可偏向 但是没有偏向
         log.debug(ClassLayout.parseInstance(l).toPrintable());
 
-        log.error("调用了 hashCode");
+//        log.error("调用了 hashCode");
         // 无锁 可偏向 已经偏向
 //        log.info(Integer.toHexString(l.hashCode()));
         log.debug(ClassLayout.parseInstance(l).toPrintable());

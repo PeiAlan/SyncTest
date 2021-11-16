@@ -4,7 +4,7 @@ package com.example.syncTest;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author Fox
+ * @author Ellison Pei
  */
 @Slf4j
 public class SyncDemo1 {

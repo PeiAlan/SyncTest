@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author  Fox
+ * @author  Ellison Pei
  *
  *
  * 进行两种测试
@@ -37,7 +37,6 @@ public class EscapeTest {
             e1.printStackTrace();
         }
     }
-
 
     /**
      * JIT编译时会对代码进行逃逸分析

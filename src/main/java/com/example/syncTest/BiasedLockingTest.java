@@ -9,7 +9,7 @@ import org.openjdk.jol.info.ClassLayout;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author Fox
+ * @author Ellison Pei
  *
  * 偏向锁批量重偏向测试
  */
@@ -53,7 +53,7 @@ public class BiasedLockingTest {
                                 ClassLayout.parseInstance(obj).toPrintable());
                     }
                 }
-                if(i==17||i==19){
+                if(i==16||i==17||i==19){
                     log.debug("thread2-第" + (i + 1) + "次释放锁\t"+
                             ClassLayout.parseInstance(obj).toPrintable());
                 }

@@ -1,6 +1,9 @@
 package com.example.syncTest;
 
 /**
+ *
+ * StringBuffer的append是个同步方法，但是append方法中的 StringBuffer 属于一个局部变量，不可能从该方法中逃逸出去，因此其实这过程是线程安全的，可以将锁消除。
+ * 测试结果： 关闭锁消除执行时间4688 ms   开启锁消除执行时间：2601 ms
  * @author  Fox
  *  锁消除   锁粗化
  **/

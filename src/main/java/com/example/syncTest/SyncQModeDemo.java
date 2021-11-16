@@ -3,7 +3,7 @@ package com.example.syncTest;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author Fox
+ * @author Ellison Pei
  * <p>
  * 根据QMode的不同，会执行不同的唤醒策略
  */
