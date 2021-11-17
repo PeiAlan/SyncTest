@@ -1,6 +1,7 @@
 javap -c SyncTest.class
 
 反编译后的字节码文件：
+以下指令 对应 bytecodes.cpp
 
 
 public class com.lock.SyncTest {
