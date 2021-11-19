@@ -1,4 +1,4 @@
-package com.tuling.jucdemo.lock;
+package com.example.lockTest;
 
 import java.io.Writer;
 import java.util.concurrent.ArrayBlockingQueue;

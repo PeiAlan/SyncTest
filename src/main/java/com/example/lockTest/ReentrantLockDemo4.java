@@ -1,4 +1,4 @@
-package com.tuling.jucdemo.lock;
+package com.example.lockTest;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;

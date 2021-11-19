@@ -3,8 +3,9 @@ package com.example.aqsTest;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
 /**
- * @author  Fox
+ * 自定义锁实现
  *
+ * @author Ellison Pei
  */
 public class CustomLock extends AbstractQueuedSynchronizer{
 
@@ -18,6 +19,11 @@ public class CustomLock extends AbstractQueuedSynchronizer{
         return false;
     }
 
+    /**
+     * 释放锁不需要cas   没必要，只需要加锁成功时才能解锁
+     * @param unused
+     * @return
+     */
     @Override
     protected boolean tryRelease(int unused) {
         //释放锁

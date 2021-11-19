@@ -1,7 +1,9 @@
-package com.tuling.jucdemo.lock;
+package com.example.lockTest;
 
 import java.util.concurrent.locks.StampedLock;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 
@@ -25,7 +27,10 @@ public class StampedLockTest{
 }
 
 @Slf4j
+@AllArgsConstructor
+@NoArgsConstructor
 class Point {
+
     private final StampedLock stampedLock = new StampedLock();
 
     private double x;

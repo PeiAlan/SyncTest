@@ -1,4 +1,4 @@
-package com.example.syncTest;
+package com.example.lockTest;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,20 +6,19 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author  Ellison Pei
- *
- *
+ * @author Ellison Pei
+ * <p>
+ * <p>
  * 进行两种测试
  * 关闭逃逸分析，同时调大堆空间，避免堆内GC的发生，如果有GC信息将会被打印出来
  * VM运行参数：-Xmx4G -Xms4G -XX:-DoEscapeAnalysis -XX:+PrintGCDetails -XX:+HeapDumpOnOutOfMemoryError
- *
+ * <p>
  * 开启逃逸分析  jdk8默认开启
  * VM运行参数：-Xmx4G -Xms4G -XX:+DoEscapeAnalysis -XX:+PrintGCDetails -XX:+HeapDumpOnOutOfMemoryError
- *
+ * <p>
  * 执行main方法后
  * jps 查看进程
  * jmap -histo 进程ID
- *
  */
 @Slf4j
 public class EscapeTest {
@@ -49,7 +48,7 @@ public class EscapeTest {
     }
 
     /**
-     *同步省略（锁消除）  JIT编译阶段优化，JIT经过逃逸分析之后发现无线程安全问题，就会做锁消除
+     * 同步省略（锁消除）  JIT编译阶段优化，JIT经过逃逸分析之后发现无线程安全问题，就会做锁消除
      */
     public void append(String str1, String str2) {
         StringBuffer stringBuffer = new StringBuffer();
@@ -58,11 +57,10 @@ public class EscapeTest {
 
     /**
      * 标量替换
-     *
      */
     private static void test2() {
-        Point point = new Point(1,2);
-        System.out.println("point.x="+point.getX()+"; point.y="+point.getY());
+        PointT point = new PointT(1, 2);
+        System.out.println("point.x=" + point.getX() + "; point.y=" + point.getY());
 
 //        int x=1;
 //        int y=2;
@@ -75,7 +73,7 @@ public class EscapeTest {
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-class Point{
+class PointT {
     private int x;
     private int y;
 

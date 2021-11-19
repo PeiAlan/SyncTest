@@ -1,16 +1,12 @@
 package com.example.aqsTest;
 
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
 /**
  * @author
  * 同步执行
  */
-public class ReentrantLockDemo {
+public class CustomLockTest {
 
     private static  int sum = 0;
-//    private static Lock lock = new ReentrantLock();
     private static CustomLock lock = new CustomLock();
 
     public static void main(String[] args) throws InterruptedException {

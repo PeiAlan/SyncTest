@@ -1,4 +1,4 @@
-package com.tuling.jucdemo.lock;
+package com.example.lockTest;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

@@ -1,4 +1,4 @@
-package com.tuling.jucdemo.lock;
+package com.example.lockTest;
 
 import com.tuling.jucdemo.factory.UnsafeFactory;
 import sun.misc.Unsafe;

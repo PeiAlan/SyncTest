@@ -4,14 +4,13 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @author Fox
+ * @author
  * 同步执行
  */
 public class ReentrantLockDemo {
 
     private static  int sum = 0;
     private static Lock lock = new ReentrantLock();
-    //private static TulingLock lock = new TulingLock();
 
     public static void main(String[] args) throws InterruptedException {
 

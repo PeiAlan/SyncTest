@@ -38,7 +38,7 @@ public class ReentrantLockDemo3 {
             log.debug("main线程获得了锁");
             t1.start();
             //先让线程t1执行
-            Thread.sleep(1000);
+            Thread.sleep(5000);
 
             t1.interrupt();
             log.debug("线程t1执行中断");

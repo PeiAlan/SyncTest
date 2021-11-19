@@ -11,7 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @Date 2020/9/15 21:06
  **/
 @Slf4j
-public class Lock11 {
+public class ReentrantLockTest {
     public static void main(String[] args) {
         ReentrantLock lock = new ReentrantLock();
         Thread t1 = new Thread(() -> {

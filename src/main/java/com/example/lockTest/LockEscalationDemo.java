@@ -1,4 +1,4 @@
-package com.example.syncTest;
+package com.example.lockTest;
 
 import org.openjdk.jol.info.ClassLayout;
 

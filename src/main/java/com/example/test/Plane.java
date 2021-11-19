@@ -1,5 +1,8 @@
 package com.example.test;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /**
@@ -9,36 +12,31 @@ import java.util.Scanner;
  * @since 1.0
  **/
 public class Plane {
+    public static void main(String[] args){
+        BufferedReader buf = new BufferedReader(
+                new InputStreamReader(System.in));
+//        Scanner input = new Scanner(System.in);
+        boolean inputIndex= true;
+        int[]shuzu=new int[100];
 
-    private static int[] nums = new int[100];
-
-    public static void main(String[] args) {
-//        initArray();
-//        Scanner sc = new Scanner(System.in);
-//        String index = sc.next();
-//        System.out.println(getValue(Integer.parseInt(index)));
-        System.out.println(11);
-    }
-
-    /**
-     * 生成100以内的随机数 100次
-     */
-    public static void initArray() {
-        for (int i = 0; i < 100; i++) {
-            int r = (int) (Math.random() * 100000) % 100;
-            nums[i] = r;
-        }
-    }
-
-    private static int getValue(int i){
-        int val;
-        try {
-            val = nums[i];
-        } catch (IndexOutOfBoundsException e){
-            e.printStackTrace();
-            throw new IndexOutOfBoundsException("下标越界");
+        //随机生成数字存入数组
+        for (int i=0;i<100;i++){
+            shuzu[i] = new java.util.Random().nextInt(100);
         }
 
-        return val;
+        do{
+            try {
+                System.out.println("Please in put the index of the shuzu[0-100]:");
+                int index = Integer.parseInt(buf.readLine());
+                System.out.println(shuzu[index]);
+                inputIndex= false;//输出之后退出
+
+            } catch (Exception ex) {
+                System.out.println("out of bounds!");
+                System.out.println("Please input again,index must be inputed from (0-100)");
+            }
+        }
+        while (inputIndex);
+
     }
 }

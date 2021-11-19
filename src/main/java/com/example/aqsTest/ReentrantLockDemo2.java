@@ -6,10 +6,11 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author Fox
- * 可重入
+ * 可重入演示
  */
 @Slf4j
 public class ReentrantLockDemo2 {
+    private static volatile String s = "1";
 
     public static ReentrantLock lock = new ReentrantLock();
 
@@ -27,6 +28,7 @@ public class ReentrantLockDemo2 {
             lock.unlock();
         }
     }
+
     public static void method2() {
         lock.lock();
         try {
@@ -36,6 +38,7 @@ public class ReentrantLockDemo2 {
             lock.unlock();
         }
     }
+
     public static void method3() {
         lock.lock();
         try {
