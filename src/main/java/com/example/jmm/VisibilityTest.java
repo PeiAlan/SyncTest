@@ -2,12 +2,20 @@ package com.example.jmm;
 
 import com.example.utils.UnsafeUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.tomcat.jni.Lock;
 
 /**
  * @author 
  *
  * -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly -Xcomp
  * hsdis-amd64.dll
+ *
+ *
+ * -XX:+UnlockDiagnosticVMOptions
+ * -XX:+PrintAssembly
+ * -Xcomp
+ * -XX:CompileCommand=dontinline,*VolatileTest3.readAndWrite
+ * -XX:CompileCommand=compileonly,*VolatileTest3
  *
  * mac配置：
  * 1、指定插件的位置 hsdis-amd64.dylib放在$JAVA_PATH/jre/lib/server/中，与libjvm.dylib同目录
@@ -18,7 +26,7 @@ import lombok.extern.slf4j.Slf4j;
 public  class VisibilityTest {
     //  storeLoad  JVM内存屏障  ---->  (汇编层面指令)  lock; addl $0,0(%%rsp)
     // lock前缀指令不是内存屏障的指令，但是有内存屏障的效果   缓存失效
-    private boolean flag = true;
+    private volatile boolean flag = true;
     private int count = 0;
 
     public void refresh() {
@@ -36,6 +44,7 @@ public  class VisibilityTest {
             //没有跳出循环   可见性的问题
             //能够跳出循环   内存屏障
 //            UnsafeUtil.getUnsafe().storeFence();
+
             //能够跳出循环    ?   释放时间片，上下文切换   加载上下文：flag=true
             //Thread.yield();
             //能够跳出循环    内存屏障
@@ -43,8 +52,8 @@ public  class VisibilityTest {
 
             //LockSupport.unpark(Thread.currentThread());
 
-            //shortWait(1000000); //1ms
-            //shortWait(1000);
+//            shortWait(1000000); //1ms
+//            shortWait(1000);
 //            long start = System.nanoTime();
 //            long end = 0;
 //            // do while   while?

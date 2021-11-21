@@ -1,6 +1,6 @@
 package com.example.lockTest;
 
-import com.tuling.jucdemo.factory.UnsafeFactory;
+import com.example.utils.UnsafeUtil;
 import sun.misc.Unsafe;
 
 /**
@@ -15,8 +15,8 @@ public class CASLock {
 
     static {
         try {
-            UNSAFE = UnsafeFactory.getUnsafe();
-            OFFSET = UnsafeFactory.getFieldOffset(
+            UNSAFE = UnsafeUtil.getUnsafe();
+            OFFSET = UnsafeUtil.getFieldOffset(
                     UNSAFE, CASLock.class, "state");
         } catch (Exception e) {
             throw new Error(e);

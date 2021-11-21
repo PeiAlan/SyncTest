@@ -1,5 +1,6 @@
 package com.example.aqsTest;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -24,11 +25,14 @@ public class ReentrantLockDemo {
                     for (int j = 0; j < 10000; j++) {
                         sum++;
                     }
+//                    TimeUnit.MINUTES.sleep(60);
+                } catch (Exception e) {
+                    e.printStackTrace();
                 } finally {
                     // 解锁
                     lock.unlock();
                 }
-            });
+            }, "t" + i);
             thread.start();
         }
 
