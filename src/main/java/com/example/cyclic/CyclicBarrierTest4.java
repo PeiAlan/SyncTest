@@ -1,4 +1,4 @@
-package com.example.lockTest;
+package com.example.cyclic;
 
 import java.util.Set;
 import java.util.concurrent.BrokenBarrierException;
@@ -6,12 +6,11 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 /**
  * 栅栏与闭锁的关键区别在于，所有的线程必须同时到达栅栏位置，才能继续执行。
  */
-public class CyclicBarrierTest2 {
+public class CyclicBarrierTest4 {
 
     //保存每个学生的平均成绩
     private ConcurrentHashMap<String, Integer> map=new ConcurrentHashMap<String,Integer>();
@@ -53,7 +52,7 @@ public class CyclicBarrierTest2 {
 
 
     public static void main(String[] args) {
-        CyclicBarrierTest2 cb=new CyclicBarrierTest2();
+        CyclicBarrierTest4 cb=new CyclicBarrierTest4();
         cb.count();
     }
 }

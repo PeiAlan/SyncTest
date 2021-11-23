@@ -1,4 +1,4 @@
-package com.example.lockTest;
+package com.example.countDownLatch;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * 让单个线程等待：多个线程(任务)完成后，进行汇总合并
  */
-public class CountDownLatchTest3 {
+public class CountDownLatchTest6 {
 
     //用于聚合所有的统计指标
     private static Map map = new ConcurrentHashMap();

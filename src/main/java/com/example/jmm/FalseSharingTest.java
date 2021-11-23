@@ -1,7 +1,5 @@
 package com.example.jmm;
 
-import sun.misc.Contended;
-
 /**
  * 伪共享
  */
@@ -41,7 +39,7 @@ public class FalseSharingTest {
 
 class Pointer {
     // 避免伪共享： @Contended +  jvm参数：-XX:-RestrictContended  jdk8支持
-    @Contended
+//    @Contended
      volatile long x;
     //避免伪共享： 缓存行填充
      //long p1, p2, p3, p4, p5, p6, p7;

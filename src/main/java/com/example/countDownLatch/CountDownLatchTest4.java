@@ -1,11 +1,12 @@
-package com.example.lockTest;
+package com.example.countDownLatch;
 
 import java.util.concurrent.CountDownLatch;
 
 /**
  * 让多个线程等待：模拟并发，让并发线程一起执行
+ * @author Ellison Pei
  */
-public class CountDownLatchTest {
+public class CountDownLatchTest4 {
     public static void main(String[] args) throws InterruptedException {
 
         CountDownLatch countDownLatch = new CountDownLatch(1);

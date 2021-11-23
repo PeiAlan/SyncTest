@@ -1,4 +1,4 @@
-package com.example.lockTest;
+package com.example.countDownLatch;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ThreadLocalRandom;
@@ -6,7 +6,7 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * 让单个线程等待：多个线程(任务)完成后，进行汇总合并
  */
-public class CountDownLatchTest2 {
+public class CountDownLatchTest5 {
     public static void main(String[] args) throws Exception {
 
         CountDownLatch countDownLatch = new CountDownLatch(5);

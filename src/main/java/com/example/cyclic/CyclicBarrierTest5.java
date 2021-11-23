@@ -1,4 +1,4 @@
-package com.example.lockTest;
+package com.example.cyclic;
 
 import java.io.Writer;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -17,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
  * @author Fox
  */
 @Slf4j
-public class CyclicBarrierTest3 {
+public class CyclicBarrierTest5 {
 
     public static void main(String[] args) {
 

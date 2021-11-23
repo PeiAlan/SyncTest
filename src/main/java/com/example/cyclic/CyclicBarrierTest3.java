@@ -1,4 +1,4 @@
-package com.example.lockTest;
+package com.example.cyclic;
 
 import java.util.concurrent.CyclicBarrier;
 
@@ -7,7 +7,7 @@ import java.util.concurrent.CyclicBarrier;
  * 闭锁用于等待countDown事件，而栅栏用于等待其他线程。
  *
  */
-public class CyclicBarrierTest {
+public class CyclicBarrierTest3 {
 
     public static void main(String[] args) {
 
