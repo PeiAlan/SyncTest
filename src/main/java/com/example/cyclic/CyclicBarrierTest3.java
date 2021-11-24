@@ -1,5 +1,7 @@
 package com.example.cyclic;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.concurrent.CyclicBarrier;
 
 /**
@@ -7,6 +9,7 @@ import java.util.concurrent.CyclicBarrier;
  * 闭锁用于等待countDown事件，而栅栏用于等待其他线程。
  *
  */
+@Slf4j
 public class CyclicBarrierTest3 {
 
     public static void main(String[] args) {
@@ -18,13 +21,13 @@ public class CyclicBarrierTest3 {
                 @Override
                 public void run() {
                     try {
-                        System.out.println(Thread.currentThread().getName()
+                        log.debug(Thread.currentThread().getName()
                                 + "开始等待其他线程");
                         cyclicBarrier.await();
-                        System.out.println(Thread.currentThread().getName() + "开始执行");
+                        log.debug(Thread.currentThread().getName() + "开始执行");
                         //TODO 模拟业务处理
                         Thread.sleep(5000);
-                        System.out.println(Thread.currentThread().getName() + "执行完毕");
+                        log.debug(Thread.currentThread().getName() + "执行完毕");
 
                     } catch (Exception e) {
                         e.printStackTrace();

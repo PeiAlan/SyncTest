@@ -43,7 +43,7 @@ public class ReadWriteLockTest {
 
 @Slf4j
 class Queue {
-    //共享数据，只能有一个线程能写该数据，但可以有多个线程同时读该数据。
+    // 共享数据，只能有一个线程能写该数据，但可以有多个线程同时读该数据。
     private Object data = null;
     private ReadWriteLock readWriteLock = new ReentrantReadWriteLock();
     private Lock readLock = readWriteLock.readLock();
