@@ -43,7 +43,7 @@ public class EscapeTest {
      * Ponit没有逃逸
      */
     private static String alloc() {
-        Point point = new Point();
+        PointT point = new PointT();
         return point.toString();
     }
 
