@@ -7,7 +7,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.StampedLock;
 
 /**
- * <p>TODO</p>
+ * StampedLock  不能广泛使用的原因：
+ *      1、使用起来 负责麻烦。
+ *      2、不支持重入，真正的业务场景一般都是需要重入的。
  *
  * @Author Ellison Pei
  * @Date 2020/9/24 14:11
@@ -39,7 +41,7 @@ public class StampedLockRWTest {
 class Container {
     int i;
     //提供 戳  的功能，read之前获取戳，判断戳是否被改变
-    long stampRw = 0l;
+    long stampRw = 0L;
 
     public void setI(int i) {
         this.i = i;
@@ -83,7 +85,7 @@ class Container {
             TimeUnit.SECONDS.sleep(5);
             this.i = i;
         } finally {
-            log.debug("写锁解锁 {},data.i{}", stampRw, i);
+            log.debug("写锁解锁 {},data.i:{}", stampRw, i);
             lock.unlockWrite(stampRw);
         }
     }

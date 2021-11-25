@@ -1,16 +1,16 @@
-package com.example.lockTest;
-
-import java.util.concurrent.locks.StampedLock;
+package com.example.stampedLock;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.concurrent.locks.StampedLock;
+
 
 /**
  * @author Fox
  */
-public class StampedLockTest{
+public class StampedLockTest1{
 
     public static void main(String[] args) throws InterruptedException {
         Point point = new Point();
