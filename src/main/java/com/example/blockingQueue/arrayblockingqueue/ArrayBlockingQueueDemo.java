@@ -3,11 +3,14 @@ package com.example.blockingQueue.arrayblockingqueue;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
+/**
+ * @author Ellison Pei
+ */
 public class ArrayBlockingQueueDemo {
 
     public static void main(String[] args) throws Exception {
         //使用ArrayBlockingQueue初始化一个BlockingQueue，指定容量的上限为1024
-        BlockingQueue queue = new ArrayBlockingQueue(1024);
+        BlockingQueue<Object> queue = new ArrayBlockingQueue<>(1024);
         
         Producer producer = new Producer(queue);  //生产者
         Consumer consumer = new Consumer(queue);  //消费者
