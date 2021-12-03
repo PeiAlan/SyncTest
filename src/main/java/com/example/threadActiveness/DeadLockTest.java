@@ -16,14 +16,15 @@ public class DeadLockTest {
         Thread threadA = new Thread(()->{
             synchronized (a) {
                 log.debug("threadA进入a同步块，执行中...");
-                try {
-                    //Thread.sleep(2000);   条件队列作用： 打破死锁的循环
-                    a.wait(5000);
-                    synchronized (b) {
-                        log.debug("threadA进入b同步块，执行中...");
-                    }
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+//                try {
+//                    //Thread.sleep(2000);   条件队列作用： 打破死锁的循环
+//                    a.wait(5000);
+//
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+                synchronized (b) {
+                    log.debug("threadA进入b同步块，执行中...");
                 }
             }
         },"threadA");
@@ -31,14 +32,15 @@ public class DeadLockTest {
         Thread threadB = new Thread(()->{
             synchronized (b) {
                 log.debug("threadB进入b同步块，执行中...");
-                try {
-                    //b.wait(5000);
-                    Thread.sleep(2000);
-                    synchronized (a) {
-                        log.debug("threadB进入a同步块，执行中...");
-                    }
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+//                try {
+//                    //b.wait(5000);
+//                    Thread.sleep(2000);
+//
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+                synchronized (a) {
+                    log.debug("threadB进入a同步块，执行中...");
                 }
 
             }
