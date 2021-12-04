@@ -2,15 +2,15 @@ package com.example.threadPool;
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.time.DayOfWeek;
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.util.concurrent.*;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @Author 钢牌讲师--子路
  **/
-@Slf4j(topic = "e")
+@Slf4j
 public class TestThreadExecutorPool11 {
 
     static ThreadPoolExecutor threadPoolExecutor;

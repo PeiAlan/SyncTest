@@ -4,7 +4,6 @@ import org.springframework.objenesis.ObjenesisException;
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
-import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
 /**
  * <p>TODO</p>
@@ -24,6 +23,7 @@ public class UnsafeUtil {
     }
     /**
      * 获取字段的内存偏移量
+     *
      * @param unsafe
      * @param clazz
      * @param fieldName

@@ -17,10 +17,12 @@ import java.util.concurrent.atomic.AtomicInteger;
  *                               BlockingQueue<Runnable> workQueue, 任务存放的队列
  *                               ThreadFactory threadFactory,       线程工厂，主要是产生线程---给线程起个自定义名字
  *                               RejectedExecutionHandler handler)  拒绝策略
+ *
+ *                         线程池中的执行优先级：      corePoolSize  >  workQueue   >  空闲线程
  **/
 @Slf4j
 public class TestThreadExecutorPool {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         AtomicInteger atomicInteger = new AtomicInteger(0);
 
         //懒惰性---不会再一开始就创建线程，他是有任务提交的时候才会创建线程
@@ -33,6 +35,9 @@ public class TestThreadExecutorPool {
         for (int i = 0; i < 2; i++) {
             threadPoolExecutor.execute(new MyTask(i));
         }
+
+        threadPoolExecutor.shutdown();
+        threadPoolExecutor.awaitTermination(1, TimeUnit.HOURS);
 
     }
 

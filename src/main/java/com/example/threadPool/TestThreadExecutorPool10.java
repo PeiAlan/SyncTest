@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @Author 钢牌讲师--子路
- * 每周的周三 22点0分0秒去执行一个任务 同步redis mysql 只有一个线程
+ * 每周的周三 22点0分0秒去执行一个任务 同步mysql redis 只有一个线程
  **/
 @Slf4j
 public class TestThreadExecutorPool10 {

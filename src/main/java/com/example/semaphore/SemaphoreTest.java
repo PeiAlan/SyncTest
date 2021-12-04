@@ -3,7 +3,6 @@ package com.example.semaphore;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Semaphore是一个计数信号量,Semaphore经常用于限制获取资源的线程数量
@@ -18,6 +17,8 @@ public class SemaphoreTest {
         Semaphore windows = new Semaphore(3);
 
         for (int i = 0; i < 5; i++) {
+
+
             new Thread(() -> {
                 try {
                     // 占用窗口    加锁

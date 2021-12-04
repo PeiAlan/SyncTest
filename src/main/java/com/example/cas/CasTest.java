@@ -30,6 +30,10 @@ public class CasTest {
         successful = UNSAFE.compareAndSwapInt(entity, offset, 3, 5);
         log.debug(successful + "\t" + entity.x);
 
+        // ABA
+        successful = UNSAFE.compareAndSwapInt(entity, offset, 5, 3);
+        log.debug(successful + "\t" + entity.x);
+
         successful = UNSAFE.compareAndSwapInt(entity, offset, 3, 8);
         log.debug(successful + "\t" + entity.x);
 

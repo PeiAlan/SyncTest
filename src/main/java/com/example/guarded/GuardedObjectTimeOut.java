@@ -22,9 +22,9 @@ public class GuardedObjectTimeOut {
             while (response == null) {
                 //睡多少时间
                 long waitTime = millis-timePassed;
-                log.debug("主线程  判断如果没有结果则wait{}毫秒",waitTime);
+                log.debug(Thread.currentThread().getName()+ "判断如果没有结果则wait{}毫秒",waitTime);
                 if (waitTime <= 0) {
-                    log.debug("超时了 直接结束while 不等了");
+                    log.debug(Thread.currentThread().getName()+ "超时了 直接结束while 不等了");
                     break;
                 }
                 try {
@@ -34,7 +34,7 @@ public class GuardedObjectTimeOut {
                 }
                 //如果被别人提前唤醒 先不结束 先計算一下经历时间   6   10
                 timePassed = System.currentTimeMillis() - begin;
-                log.debug("经历了: {}", timePassed);
+                log.debug(Thread.currentThread().getName()+ "经历了: {}", timePassed);
             }
         }
         return response;
@@ -47,9 +47,18 @@ public class GuardedObjectTimeOut {
      */
     public void setResponse(Object response) {
         synchronized (lock) {
-            this.response = response;
-            //设置完成之后唤醒主线程
-            lock.notifyAll();
+            try {
+                log.debug(Thread.currentThread().getName()+ "开始执行");
+                this.response = response;
+                Thread.sleep(15000L);
+                log.debug(Thread.currentThread().getName()+ "执行完了，开始唤醒其他线程");
+                //设置完成之后唤醒主线程
+                lock.notifyAll();
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 }
