@@ -37,7 +37,7 @@ public class TestJol {
      *
      * 批量重偏向阈值
      *    intx BiasedLockingBulkRebiasThreshold          = 20
-     *      intx BiasedLockingBulkRevokeThreshold          = 40
+     *    intx BiasedLockingBulkRevokeThreshold          = 40
      *
      *
      * @param args

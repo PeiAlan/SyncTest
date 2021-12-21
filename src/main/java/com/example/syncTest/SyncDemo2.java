@@ -10,16 +10,16 @@ public class SyncDemo2 {
 
     private static int counter = 0;
 
-    private static String lock = "";
+    private static final String LOCK = "";
 
     public static void increment() {
-        synchronized (lock){
-                counter++;
+        synchronized (LOCK) {
+            counter++;
         }
     }
 
     public static void decrement() {
-        synchronized (lock) {
+        synchronized (LOCK) {
             counter--;
         }
     }

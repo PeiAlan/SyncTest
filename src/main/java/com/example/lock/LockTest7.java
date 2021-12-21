@@ -32,6 +32,14 @@ public class LockTest7 {
             }
         }, "t2");
 
+        //Thread t4 = new Thread(() -> {
+        //    synchronized (lock) {
+        //        log.debug("b");
+        //        flag = true;
+        //        lock.notify();
+        //    }
+        //}, "t4");
+
         t1.start();
         t2.start();
     }

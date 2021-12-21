@@ -9,25 +9,38 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class SyncDemo {
 
-    private static volatile int counter = 0;
+    /**
+     * volatile 对于单一操作保持原子性，对于 ++  -- 这种操作不保证原子性
+     */
+    private static int counter = 0;
 
-    public static void increment() {
+    public synchronized static void increment() {
         counter++;
     }
 
-    public static void decrement() {
+    /**
+     * SyncDemo.class
+     */
+    public synchronized static void decrement() {
         counter--;
+    }
+
+    /**
+     * 类的实例对象，  new SyncDemo()  == obj
+     */
+    public synchronized void test() {
+        System.out.println();
     }
 
     public static void main(String[] args) throws InterruptedException {
         Thread t1 = new Thread(() -> {
-            for (int i = 0; i < 50000; i++) {
+            for (int i = 0; i < 5000; i++) {
                 increment();
             }
         }, "t1");
 
         Thread t2 = new Thread(() -> {
-            for (int i = 0; i < 50000; i++) {
+            for (int i = 0; i < 5000; i++) {
                 decrement();
             }
         }, "t2");
@@ -41,5 +54,17 @@ public class SyncDemo {
         log.info("counter={}", counter);
 
 
+        //synchronized (SyncDemo.class){
+        //
+        //}
+        //
+        //synchronized (this){
+        //
+        //}
+        //
+        //Object o = new Object();
+        //synchronized (o){
+        //
+        //}
     }
 }

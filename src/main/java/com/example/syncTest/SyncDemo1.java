@@ -38,4 +38,5 @@ public class SyncDemo1 {
         //思考： counter=？
         log.info("counter={}", counter);
     }
+    
 }

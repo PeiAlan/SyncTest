@@ -16,9 +16,9 @@ public class SyncQModeDemo {
 
         demo.startThreadA();
         //控制线程执行时间
-        Thread.sleep(100);
+        Thread.sleep(1000);
         demo.startThreadB();
-        Thread.sleep(100);
+        Thread.sleep(1000);
         demo.startThreadC();
     }
 
@@ -29,8 +29,8 @@ public class SyncQModeDemo {
             synchronized (lock) {
                 log.debug("A get lock");
                 try {
-                    Thread.sleep(300);
-                    //lock.wait(300);
+                    //Thread.sleep(300);
+                    lock.wait(300);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
