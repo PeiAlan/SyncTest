@@ -1,4 +1,4 @@
-package com.example.lockTest;
+package com.example.testJol.sync;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
