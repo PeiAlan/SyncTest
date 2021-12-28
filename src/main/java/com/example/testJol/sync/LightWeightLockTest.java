@@ -63,7 +63,6 @@ public class LightWeightLockTest {
                 //obj.hashCode();
                 log.debug(Thread.currentThread().getName() + "获取锁执行中。。。\n"
                         + ClassLayout.parseInstance(obj).toPrintable());
-
             }
             log.debug(Thread.currentThread().getName() + "释放锁。。。\n"
                     + ClassLayout.parseInstance(obj).toPrintable());

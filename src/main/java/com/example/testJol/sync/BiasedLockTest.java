@@ -26,7 +26,7 @@ public class BiasedLockTest {
      * 打印 JVM 所有默认值
      */
     @Test
-    public void printGCDetail() {
+    public void printGcDetail() {
         System.out.println(111);
     }
 
@@ -111,7 +111,6 @@ public class BiasedLockTest {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
             log.debug(Thread.currentThread().getName() + "获取锁执行中。。。\n"
                     + ClassLayout.parseInstance(obj).toPrintable());
         }
