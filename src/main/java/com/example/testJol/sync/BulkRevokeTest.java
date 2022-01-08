@@ -9,6 +9,7 @@ import java.util.concurrent.locks.LockSupport;
 
 /**
  * 测试：批量撤销
+ * intx BiasedLockingBulkRevokeThreshold  = 40
  *
  * @author Ellison_Pei
  * @date 2021/12/22 14:31
@@ -69,6 +70,7 @@ public class BulkRevokeTest {
 
         Thread.sleep(3000);
 
+        // 线程3
         new Thread(() -> {
             for (int i = 0; i < 50; i++) {
                 Object lock = list.get(i);

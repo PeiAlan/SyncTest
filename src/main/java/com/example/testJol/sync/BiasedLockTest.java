@@ -49,10 +49,15 @@ public class BiasedLockTest {
      */
     @Test
     public void test2() throws InterruptedException {
+        // 001
         log.debug(ClassLayout.parseInstance(new Object()).toPrintable());
         Thread.sleep(4000);
+        // 101
+        // new Object()  101  00000000  匿名偏向（偏向锁可偏向，但是没有偏向）
+        //Object o = new Object();
+        //log.debug(ClassLayout.parseInstance(o).toPrintable());
         synchronized (BiasedLockTest.class) {
-            // 4s后偏向锁为可偏向或者匿名偏向状态
+            // 4s后偏向锁为可偏向或者匿名偏向状态 101
             log.debug(ClassLayout.parseInstance(new Object()).toPrintable());
         }
     }
@@ -62,9 +67,11 @@ public class BiasedLockTest {
      */
     @Test
     public void testLockEscalation() throws InterruptedException {
+        // 001
         log.debug(ClassLayout.parseInstance(new Object()).toPrintable());
         //HotSpot 虚拟机在启动后有个 4s 的延迟才会对每个新建的对象开启偏向锁模式
         Thread.sleep(4000);
+        // 101  000000000000000
         Object obj = new Object();
         // 这种情况就没有 偏向锁了，后面thread直接 吧 obj 对象加成轻量锁，因为此时偏向锁被撤销了
         //obj.hashCode();
@@ -82,11 +89,14 @@ public class BiasedLockTest {
             }
             log.debug(Thread.currentThread().getName() + "释放锁。。。\n"
                     + ClassLayout.parseInstance(obj).toPrintable());
+
+            //method();
         }, "thread1").start();
 
         Thread.sleep(5000);
         log.debug(ClassLayout.parseInstance(obj).toPrintable());
     }
+
 
     /**
      * 偏向锁撤销之调用wait/notify

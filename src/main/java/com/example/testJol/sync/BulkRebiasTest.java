@@ -9,6 +9,7 @@ import java.util.concurrent.locks.LockSupport;
 
 /**
  * 测试：批量重偏向
+ * intx BiasedLockingBulkRebiasThreshold          = 20
  *
  * @author Ellison_Pei
  * @date 2021/12/22 14:31
@@ -54,7 +55,7 @@ public class BulkRebiasTest {
                                 ClassLayout.parseInstance(obj).toPrintable());
                     }
                 }
-                if (i == 17 || i == 19) {
+                if (i == 16 || i == 17 || i == 18 || i == 19) {
                     log.debug("thread2-第" + (i + 1) + "次释放锁\t" +
                             ClassLayout.parseInstance(obj).toPrintable());
                 }
