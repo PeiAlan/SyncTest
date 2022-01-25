@@ -1,17 +1,16 @@
 package com.example.lockTest;
 
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author Fox
  * 条件变量
  */
 @Slf4j
-public class ReentrantLockDemo6 {
+public class ReentrantLockDemoCondition {
     private static ReentrantLock lock = new ReentrantLock();
     private static Condition cigCon = lock.newCondition();
     private static Condition takeCon = lock.newCondition();
@@ -58,7 +57,7 @@ public class ReentrantLockDemo6 {
     }
 
     public static void main(String[] args) {
-        ReentrantLockDemo6 test = new ReentrantLockDemo6();
+        ReentrantLockDemoCondition test = new ReentrantLockDemoCondition();
         new Thread(() ->{
             test.cigratee();
         }).start();

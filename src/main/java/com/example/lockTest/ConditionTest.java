@@ -1,10 +1,10 @@
 package com.example.lockTest;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author Fox
@@ -29,7 +29,7 @@ public class ConditionTest {
             } finally {
                 lock.unlock();
             }
-        }).start();
+        }, "t1").start();
 
         new Thread(() -> {
             lock.lock();
@@ -45,7 +45,7 @@ public class ConditionTest {
             } finally {
                 lock.unlock();
             }
-        }).start();
+        }, "t2").start();
 
 
     }
